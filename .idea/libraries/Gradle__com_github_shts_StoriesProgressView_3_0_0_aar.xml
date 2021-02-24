@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.shts:StoriesProgressView:3.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/37d612f1e08f7a5220eaba123a2caa16/jetified-StoriesProgressView-3.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/37d612f1e08f7a5220eaba123a2caa16/jetified-StoriesProgressView-3.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/37d612f1e08f7a5220eaba123a2caa16/jetified-StoriesProgressView-3.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0415801494ff5e68c422937749839990/jetified-StoriesProgressView-3.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0415801494ff5e68c422937749839990/jetified-StoriesProgressView-3.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0415801494ff5e68c422937749839990/jetified-StoriesProgressView-3.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
