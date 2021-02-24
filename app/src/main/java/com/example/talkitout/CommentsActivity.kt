@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.talkitout.adapter.CommentAdapter
+import com.example.talkitout.adapter.CommentsAdapter
 import com.example.talkitout.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -25,7 +25,7 @@ class CommentsActivity : AppCompatActivity()
     private var postId = ""
     private var publisherId = ""
     private var firebaseUser: FirebaseUser? = null
-    private var commentAdapter: CommentAdapter? = null
+    private var commentAdapter: CommentsAdapter? = null
     private var commentList: MutableList<com.example.talkitout.model.Comment>? = null
 
 
@@ -48,7 +48,7 @@ class CommentsActivity : AppCompatActivity()
         recyclerView.layoutManager = linearLayoutManager
 
         commentList = ArrayList()
-        commentAdapter = CommentAdapter(this, commentList)
+        commentAdapter = CommentsAdapter(this, commentList)
         recyclerView.adapter = commentAdapter
 
         userInfo()

@@ -22,9 +22,9 @@ import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_comments.*
 
-class CommentAdapter(private val mContext: Context,
+class CommentsAdapter(private val mContext: Context,
                      private val mComment: MutableList<Comment>?
-)  : RecyclerView.Adapter<CommentAdapter.ViewHolder>()
+)  : RecyclerView.Adapter<CommentsAdapter.ViewHolder>()
 {
     private var firebaseUser: FirebaseUser? = null
 
