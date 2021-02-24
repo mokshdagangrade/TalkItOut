@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TalkItOut.iml" filepath="$PROJECT_DIR$/.idea/modules/TalkItOut.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TalkItOut.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TalkItOut.app.iml" />
+    </modules>
+  </component>
+</project>

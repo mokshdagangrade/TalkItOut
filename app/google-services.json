@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "624782880725",
+    "firebase_url": "https://instagramtest-d6d0a-default-rtdb.firebaseio.com",
+    "project_id": "instagramtest-d6d0a",
+    "storage_bucket": "instagramtest-d6d0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624782880725:android:1f844ee95b09e28ada575c",
+        "android_client_info": {
+          "package_name": "com.example.instagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASVSSqlvESPd1XMqfKVXJ8xdas-7Ki0UE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624782880725:android:fc146a2edf7fac5fda575c",
+        "android_client_info": {
+          "package_name": "com.example.instagramcloneproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624782880725-mhh24vlmatpr9c3bubtbjq01sgo7e94e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instagramcloneproject",
+            "certificate_hash": "877bd88106dc2145500238583f410ca63eebaf7c"
+          }
+        },
+        {
+          "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASVSSqlvESPd1XMqfKVXJ8xdas-7Ki0UE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624782880725:android:1dd3892e711e6e60da575c",
+        "android_client_info": {
+          "package_name": "com.example.talkitout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624782880725-7555kcpa1bvfunot99uamoarvhmr3mos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.talkitout",
+            "certificate_hash": "877bd88106dc2145500238583f410ca63eebaf7c"
+          }
+        },
+        {
+          "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASVSSqlvESPd1XMqfKVXJ8xdas-7Ki0UE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624782880725-a01151vptj8tplcu8ohq1mv3brtavt1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
