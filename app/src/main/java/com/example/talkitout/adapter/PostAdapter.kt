@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.appcompat.view.menu.ActionMenuItemView
@@ -68,6 +69,7 @@ class PostAdapter
             holder.description.visibility = View.VISIBLE
             holder.description.setText(post.getDescription())
         }
+        holder.categoryName.setText(post.getCategory())
 
         publisherInfo(holder.profileImage, holder.userName, holder.publisher, post.getPublisher())
         isLikes(post.getPostid(), holder.likeButton)
@@ -292,6 +294,7 @@ class PostAdapter
         var publisher: TextView
         var description: TextView
         var comments: TextView
+        var categoryName: TextView
 
         init {
             profileImage = itemView.findViewById(R.id.user_profile_image_post)
@@ -304,6 +307,7 @@ class PostAdapter
             publisher = itemView.findViewById(R.id.publisher)
             description = itemView.findViewById(R.id.description)
             comments = itemView.findViewById(R.id.comments)
+            categoryName = itemView.findViewById(R.id.user_category)
         }
 
     }

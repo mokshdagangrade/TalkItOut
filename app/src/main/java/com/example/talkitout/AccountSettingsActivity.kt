@@ -130,8 +130,10 @@ class AccountSettingsActivity : AppCompatActivity()
                 if(p0.exists())
                 {
                     val user = p0.getValue<User>(User::class.java)
-
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(profile_image_view_profile_frag)
+                    if(user!!.getImage().isEmpty()){
+                        profile_image_view_profile_frag!!.setImageResource(R.drawable.profile)}
+                    else{
+                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(profile_image_view_profile_frag)}
                     username_profile_frag.setText(user!!.getUsername())
                     full_name_profile_frag.setText(user!!.getFullname())
                     bio_profile_frag.setText(user!!.getBio())

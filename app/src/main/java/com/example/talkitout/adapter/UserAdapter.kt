@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_account_settings.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class UserAdapter (private var mContext: Context,
                    private var mUser: List<User>,
@@ -44,7 +46,11 @@ class UserAdapter (private var mContext: Context,
         holder.userNameTextView.text = user.getUsername()
         holder.userFullnameTextView.text = user.getFullname()
 
-        Picasso.get().load(user.getImage()).placeholder(R.drawable.profile).into(holder.userProfileImage)
+        if(user!!.getImage().isEmpty()){
+            holder.userProfileImage!!.setImageResource(R.drawable.profile)}
+        else{
+
+        Picasso.get().load(user.getImage()).placeholder(R.drawable.profile).into(holder.userProfileImage)}
 
         checkFollowingStatus(user.getUID(), holder.followButton)
 

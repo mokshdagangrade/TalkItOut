@@ -1,13 +1,16 @@
 package com.example.talkitout
 
+
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Toast
+import android.view.View
+import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -18,19 +21,43 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import com.theartofdev.edmodo.cropper.CropImage
-import kotlinx.android.synthetic.main.activity_account_settings.*
 import kotlinx.android.synthetic.main.activity_add_post.*
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 
 class AddPostActivity : AppCompatActivity()
 {
     private var myUrl = ""
     private var imageUri: Uri? = null
     private var storagePostPicRef: StorageReference? = null
+    var arrayList: ArrayList<String>? = null
+    var spinner: Spinner ?= null
+    var categoryName: String? =null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)
+
+        spinner= findViewById(R.id.spinner)
+        arrayList = ArrayList()
+        arrayList!!.add("Music")
+        arrayList!!.add("Personal")
+        arrayList!!.add("Community")
+        arrayList!!.add("Others")
+        arrayList!!.sort()
+        val arrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayList!!)
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner!!.adapter = arrayAdapter
+        spinner!!.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                categoryName = parent.getItemAtPosition(position).toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
 
         storagePostPicRef = FirebaseStorage.getInstance().reference.child("Posts Pictures")
 
@@ -38,7 +65,7 @@ class AddPostActivity : AppCompatActivity()
 
 
         CropImage.activity()
-            .setAspectRatio(2,1)
+            .setAspectRatio(2, 1)
             .start(this@AddPostActivity)
     }
 
@@ -60,7 +87,7 @@ class AddPostActivity : AppCompatActivity()
     {
         when{
             imageUri == null -> Toast.makeText(this, "Please select image first.", Toast.LENGTH_LONG).show()
-            TextUtils.isEmpty(description_post.text.toString()) -> Toast.makeText(this, "Please write description.",Toast.LENGTH_LONG).show()
+            TextUtils.isEmpty(description_post.text.toString()) -> Toast.makeText(this, "Please write description.", Toast.LENGTH_LONG).show()
 
             else -> {
                 val progressDialog = ProgressDialog(this)
@@ -73,9 +100,8 @@ class AddPostActivity : AppCompatActivity()
                 var uploadTask: StorageTask<*>
                 uploadTask = fileRef.putFile(imageUri!!)
 
-                uploadTask.continueWithTask(Continuation <UploadTask.TaskSnapshot, Task<Uri>> { task ->
-                    if (!task.isSuccessful)
-                    {
+                uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                    if (!task.isSuccessful) {
                         task.exception?.let {
                             throw it
                             progressDialog.dismiss()
@@ -83,9 +109,8 @@ class AddPostActivity : AppCompatActivity()
                     }
                     return@Continuation fileRef.downloadUrl
                 })
-                    .addOnCompleteListener ( OnCompleteListener<Uri> {task ->
-                        if (task.isSuccessful)
-                        {
+                    .addOnCompleteListener(OnCompleteListener<Uri> { task ->
+                        if (task.isSuccessful) {
                             val downloadUrl = task.result
                             myUrl = downloadUrl.toString()
 
@@ -97,6 +122,7 @@ class AddPostActivity : AppCompatActivity()
                             postMap["description"] = description_post.text.toString().toLowerCase()
                             postMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
                             postMap["postimage"] = myUrl
+                            postMap["category"] = categoryName!!.toString().toLowerCase()
 
                             ref.child(postId).updateChildren(postMap)
 
@@ -108,12 +134,10 @@ class AddPostActivity : AppCompatActivity()
 
                             progressDialog.dismiss()
 
-                        }
-                        else
-                        {
+                        } else {
                             progressDialog.dismiss()
                         }
-                    } )
+                    })
             }
         }
     }

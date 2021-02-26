@@ -29,6 +29,11 @@
                 android:src="@drawable/profile"
                 android:padding="5dp"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
             <TextView
                 android:id="@+id/user_name_post"
                 android:layout_width="wrap_content"
@@ -40,6 +45,18 @@
                 android:layout_marginTop="14dp"
                 android:textColor="@color/colorPrimaryDark"
                 />
+
+                <TextView
+                    android:id="@+id/user_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="Other"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
 

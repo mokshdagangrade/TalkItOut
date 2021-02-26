@@ -310,8 +310,10 @@ class ProfileFragment : Fragment() {
                 if(p0.exists())
                 {
                     val user = p0.getValue<User>(User::class.java)
-
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(view?.pro_image_profile_frag)
+                    if(user!!.getImage().isEmpty()){
+                        view?.pro_image_profile_frag!!.setImageResource(R.drawable.profile)}
+                    else{
+                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(view?.pro_image_profile_frag)}
                     view?.profile_fragment_username?.text = user!!.getUsername()
                     view?.full_name_profile_frag?.text = user!!.getFullname()
                     view?.bio_profile_frag?.text = user!!.getBio()

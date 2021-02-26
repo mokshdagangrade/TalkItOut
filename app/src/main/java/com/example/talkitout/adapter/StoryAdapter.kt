@@ -126,12 +126,18 @@ class StoryAdapter (private val mContext: Context, private val mstory: List<Stor
                 if(p0.exists())
                 {
                     val user = p0.getValue<User>(User::class.java)
+                    if(user!!.getImage().isEmpty()){
+                        viewHolder.story_image!!.setImageResource(R.drawable.profile)}
+                    else{
 
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(viewHolder.story_image)
+                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(viewHolder.story_image)}
 
                     if (position!=0)
                     {
-                        Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(viewHolder.story_image_seen)
+                        if(user!!.getImage().isEmpty()){
+                            viewHolder.story_image!!.setImageResource(R.drawable.profile)}
+                        else{
+                        Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(viewHolder.story_image_seen)}
                         viewHolder.story_username!!.text = user.getUsername()
                     }
                 }

@@ -5,16 +5,18 @@ class Post {
     private  var postimage: String = ""
     private  var publisher: String = ""
     private  var description: String = ""
+    private  var categoryName: String = ""
 
 
     constructor()
 
 
-    constructor(postid: String, postimage: String, publisher: String, description: String) {
+    constructor(postid: String, postimage: String, publisher: String, description: String, categoryName: String) {
         this.postid = postid
         this.postimage = postimage
         this.publisher = publisher
         this.description = description
+        this.categoryName = categoryName
     }
 
 
@@ -32,6 +34,9 @@ class Post {
 
     fun getDescription(): String{
         return description
+    }
+    fun getCategory(): String{
+        return categoryName
     }
 
     fun setPostid(postid: String)
@@ -52,6 +57,10 @@ class Post {
     fun setDescription(description: String)
     {
         this.description = description
+    }
+    fun setCategory(categoryName: String)
+    {
+        this.categoryName = categoryName
     }
 
 

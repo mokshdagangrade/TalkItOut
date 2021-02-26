@@ -134,8 +134,11 @@ class NotificationAdapter(
                 if(p0.exists())
                 {
                     val user = p0.getValue<User>(User::class.java)
+                    if(user!!.getImage().isEmpty()){
+                        imageView!!.setImageResource(R.drawable.profile)}
+                    else{
 
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(imageView)
+                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(imageView)}
                     userName.text = user!!.getUsername()
                 }
             }
