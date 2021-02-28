@@ -60,6 +60,17 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
 
 
         <ImageView
@@ -130,16 +141,8 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:textColor="@color/colorPrimaryDark"
-            android:layout_marginLeft="10dp" />
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/comments"

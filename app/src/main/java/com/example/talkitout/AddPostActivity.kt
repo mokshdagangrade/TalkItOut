@@ -21,6 +21,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import com.theartofdev.edmodo.cropper.CropImage
+import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_add_post.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -64,7 +65,7 @@ class AddPostActivity : AppCompatActivity()
         save_new_post_btn.setOnClickListener { uploadImage() }
 
 
-        CropImage.activity()
+        CropImage.activity().setGuidelines(CropImageView.Guidelines.ON)
             .setAspectRatio(2, 1)
             .start(this@AddPostActivity)
     }
@@ -119,10 +120,10 @@ class AddPostActivity : AppCompatActivity()
 
                             val postMap = HashMap<String, Any>()
                             postMap["postid"] = postId!!
-                            postMap["description"] = description_post.text.toString().toLowerCase()
+                            postMap["description"] = description_post.text.toString()
                             postMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
                             postMap["postimage"] = myUrl
-                            postMap["category"] = categoryName!!.toString().toLowerCase()
+                            postMap["category"] = categoryName!!.toString()
 
                             ref.child(postId).updateChildren(postMap)
 

@@ -3,10 +3,12 @@ package com.example.talkitout.adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.talkitout.AddStoryActivity
 import com.example.talkitout.R
 import com.example.talkitout.StoryActivity
+import com.example.talkitout.StoryTimeActivity
 import com.example.talkitout.model.Story
 import com.example.talkitout.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -189,9 +192,7 @@ class StoryAdapter (private val mContext: Context, private val mstory: List<Stor
 
                         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Add Story")
                         { dialogInterface, which ->
-
-                            val intent = Intent(mContext, AddStoryActivity::class.java)
-                            intent.putExtra("userId", FirebaseAuth.getInstance().currentUser!!.uid)
+                            val intent = Intent(mContext, StoryTimeActivity::class.java)
                             mContext.startActivity(intent)
                             dialogInterface.dismiss()
                         }
@@ -200,8 +201,7 @@ class StoryAdapter (private val mContext: Context, private val mstory: List<Stor
                     }
                     else
                     {
-                        val intent = Intent(mContext, AddStoryActivity::class.java)
-                        intent.putExtra("userid", FirebaseAuth.getInstance().currentUser!!.uid)
+                        val intent = Intent(mContext, StoryTimeActivity::class.java)
                         mContext.startActivity(intent)
                     }
 
@@ -270,7 +270,4 @@ class StoryAdapter (private val mContext: Context, private val mstory: List<Stor
             }
         })
     }
-
-
-
 }
