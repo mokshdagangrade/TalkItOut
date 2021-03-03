@@ -15,6 +15,7 @@ import com.example.talkitout.AccountSettingsActivity
 import com.example.talkitout.R
 import com.example.talkitout.ShowUsersActivity
 import com.example.talkitout.adapter.MyImagesAdapter
+import com.example.talkitout.adapter.PostAdapter
 import com.example.talkitout.model.Post
 import com.example.talkitout.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -38,11 +39,11 @@ class ProfileFragment : Fragment() {
 
     private lateinit var firebaseUser: FirebaseUser
 
-    var postList: List<Post>? = null
-    var myImagesAdapter: MyImagesAdapter? = null
+    var postList: MutableList<Post>? = null
+    var postAdapter: PostAdapter? = null
 
-    var myImagesAdapterSavedImg: MyImagesAdapter? = null
-    var postListSaved: List<Post>? = null
+    var postAdapterSavedImg: PostAdapter? = null
+    var postListSaved: MutableList<Post>? = null
     var mySavesImg: List<String>? = null
 
 
@@ -73,27 +74,28 @@ class ProfileFragment : Fragment() {
         }
 
         //recycler View for Uploaded Images
-        var recyclerViewUploadImages: RecyclerView
+        var recyclerViewUploadImages: RecyclerView? = null
         recyclerViewUploadImages = view.findViewById(R.id.recycler_view_upload_pic)
         recyclerViewUploadImages.setHasFixedSize(true)
-        val linearLayoutManager: LinearLayoutManager = GridLayoutManager(context, 3)
+        val linearLayoutManager: LinearLayoutManager = GridLayoutManager(context, 1)
         recyclerViewUploadImages.layoutManager = linearLayoutManager
 
+
         postList = ArrayList()
-        myImagesAdapter = context?.let { MyImagesAdapter(it, postList as ArrayList<Post>) }
-        recyclerViewUploadImages.adapter = myImagesAdapter
+        postAdapter = context?.let { PostAdapter(it, postList as ArrayList<Post>) }
+        recyclerViewUploadImages.adapter = postAdapter
 
 
         //recycler View for Saved Images
-        var recyclerViewSavedImages: RecyclerView
-        recyclerViewSavedImages = view.findViewById(R.id.recycler_view_saved_pic)
+        var recyclerViewSavedImages: RecyclerView? = null
+        recyclerViewSavedImages= view.findViewById(R.id.recycler_view_saved_pic)
         recyclerViewSavedImages.setHasFixedSize(true)
-        val linearLayoutManager2: LinearLayoutManager = GridLayoutManager(context, 3)
+        val linearLayoutManager2: LinearLayoutManager = GridLayoutManager(context, 1)
         recyclerViewSavedImages.layoutManager = linearLayoutManager2
 
         postListSaved = ArrayList()
-        myImagesAdapterSavedImg = context?.let { MyImagesAdapter(it, postListSaved as ArrayList<Post>) }
-        recyclerViewSavedImages.adapter = myImagesAdapterSavedImg
+        postAdapterSavedImg = context?.let { PostAdapter(it, postListSaved as ArrayList<Post>) }
+        recyclerViewSavedImages.adapter = postAdapterSavedImg
 
 
         recyclerViewSavedImages.visibility = View.GONE
@@ -286,7 +288,7 @@ class ProfileFragment : Fragment() {
                             (postList as ArrayList<Post>).add(post)
                         }
                         Collections.reverse(postList)
-                        myImagesAdapter!!.notifyDataSetChanged()
+                        postAdapter!!.notifyDataSetChanged()
 
                     }
                 }
@@ -439,7 +441,8 @@ class ProfileFragment : Fragment() {
                             }
                         }
                     }
-                    myImagesAdapterSavedImg!!.notifyDataSetChanged()
+                    Collections.reverse(postListSaved)
+                    postAdapterSavedImg!!.notifyDataSetChanged()
                 }
             }
 

@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -18,17 +21,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf4dd545-aef2-425f-ac48-fbe9b8c41a5d" name="Default Changelist" comment="Category added, login issue sorted">
+    <list default="true" id="bf4dd545-aef2-425f-ac48-fbe9b8c41a5d" name="Default Changelist" comment="Posts layout changed, story figured.">
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21-02-2021_12_33_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21-02-2021_12_33__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddPostActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddPostActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddStoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddStoryActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/StoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/StoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/MyImagesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/MyImagesAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/PostAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/PostAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/fragments/ProfileFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_post.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_post.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/posts_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/posts_layout.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Profile" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -101,9 +107,10 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="RZ8N801KN8J" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-28T10:17:36.503Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-01T07:20:29.390Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -208,6 +215,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TalkItOut [signingReport]" />
+        <item itemvalue="Gradle.TalkItOut [signingReport]" />
+        <item itemvalue="Gradle.TalkItOut [signingReport]" />
+        <item itemvalue="Gradle.TalkItOut [signingReport]" />
+        <item itemvalue="Gradle.TalkItOut [signingReport]" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614373101246</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Posts layout changed, story figured.">
+      <created>1614514045537</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614514045537</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +295,8 @@
     <MESSAGE value="Changed adapter" />
     <MESSAGE value="Gradle changed" />
     <MESSAGE value="Category added, login issue sorted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Category added, login issue sorted" />
+    <MESSAGE value="Posts layout changed, story figured." />
+    <option name="LAST_COMMIT_MESSAGE" value="Posts layout changed, story figured." />
   </component>
   <component name="WindowStateProjectService">
     <state x="346" y="158" key="AndroidCreateResourceDirectoryDialog" timestamp="1613768494693">
@@ -304,30 +323,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="41" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614159260890" />
-    <state width="1480" height="185" key="GridCell.Tab.0.bottom" timestamp="1614513912704">
+    <state width="1480" height="185" key="GridCell.Tab.0.bottom" timestamp="1614759470997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614513912704" />
-    <state width="1480" height="185" key="GridCell.Tab.0.center" timestamp="1614513912704">
+    <state width="1480" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614759470997" />
+    <state width="1480" height="185" key="GridCell.Tab.0.center" timestamp="1614759470997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614513912704" />
-    <state width="1480" height="185" key="GridCell.Tab.0.left" timestamp="1614513912704">
+    <state width="1480" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614759470997" />
+    <state width="1480" height="185" key="GridCell.Tab.0.left" timestamp="1614759470997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614513912704" />
-    <state width="1480" height="185" key="GridCell.Tab.0.right" timestamp="1614513912704">
+    <state width="1480" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614759470997" />
+    <state width="1480" height="185" key="GridCell.Tab.0.right" timestamp="1614759470997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614513912704" />
+    <state width="1480" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614759470997" />
     <state x="153" y="0" key="SettingsEditor" timestamp="1614159081836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614159081836" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1614373119179">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1614514064063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614373119179" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614514064063" />
     <state x="536" y="82" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1613890222301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
