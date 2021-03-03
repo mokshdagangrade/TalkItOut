@@ -3,18 +3,17 @@ package com.example.talkitout.fragments
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageButton
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.talkitout.AccountSettingsActivity
 import com.example.talkitout.R
 import com.example.talkitout.ShowUsersActivity
-import com.example.talkitout.adapter.MyImagesAdapter
+import com.example.talkitout.SignInActivity
 import com.example.talkitout.adapter.PostAdapter
 import com.example.talkitout.model.Post
 import com.example.talkitout.model.User
@@ -29,6 +28,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 import java.util.*
 import kotlin.collections.ArrayList
+
 
 /**
  * A simple [Fragment] subclass.
@@ -46,12 +46,13 @@ class ProfileFragment : Fragment() {
     var postListSaved: MutableList<Post>? = null
     var mySavesImg: List<String>? = null
 
+    lateinit var toolbar: Toolbar
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_profile, container, false)
 
@@ -138,7 +139,12 @@ class ProfileFragment : Fragment() {
 
             when
             {
-                getButtonText == "Edit Profile" -> startActivity(Intent(context, AccountSettingsActivity::class.java))
+                getButtonText == "Edit Profile" -> startActivity(
+                    Intent(
+                        context,
+                        AccountSettingsActivity::class.java
+                    )
+                )
 
                 getButtonText == "Follow" -> {
                     firebaseUser?.uid.let { it1 ->
@@ -190,6 +196,66 @@ class ProfileFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        toolbar = view.findViewById(R.id.profile_toolbar) as Toolbar
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.inflateMenu(R.menu.more)
+            toolbar.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.action_edit_profile -> {
+                            startActivity(
+                                Intent(
+                                    context,
+                                    AccountSettingsActivity::class.java
+                                )
+                            )
+                    }
+                    R.id.action_logout -> {
+                        FirebaseAuth.getInstance().signOut()
+
+                        val intent = Intent(context, SignInActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                        activity!!.finish()
+                    }
+                }
+                true
+            }
+        }
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater!!.inflate(R.menu.more, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item!!.itemId
+        if(id==R.id.action_edit_profile){
+            startActivity(
+                Intent(
+                    context,
+                    AccountSettingsActivity::class.java
+                )
+            )
+        }
+        if(id==R.id.action_logout){
+            FirebaseAuth.getInstance().signOut()
+
+            val intent = Intent(context, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            activity!!.finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun checkFollowAndFollowingButtonStatus()
     {
         val followingRef = firebaseUser?.uid.let { it1 ->
@@ -200,21 +266,16 @@ class ProfileFragment : Fragment() {
 
         if(followingRef != null)
         {
-            followingRef.addValueEventListener(object : ValueEventListener{
-                override fun onDataChange(p0: DataSnapshot)
-                {
-                    if(p0.child(profileId).exists())
-                    {
-                        view?.edit_account_settings_btn?.text   = "Following"
-                    }
-                    else
-                    {
-                        view?.edit_account_settings_btn?.text   = "Follow"
+            followingRef.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(p0: DataSnapshot) {
+                    if (p0.child(profileId).exists()) {
+                        view?.edit_account_settings_btn?.text = "Following"
+                    } else {
+                        view?.edit_account_settings_btn?.text = "Follow"
                     }
                 }
 
-                override fun onCancelled(p0: DatabaseError)
-                {
+                override fun onCancelled(p0: DatabaseError) {
 
                 }
             })
@@ -227,18 +288,14 @@ class ProfileFragment : Fragment() {
             .child("Follow").child(profileId)
             .child("Followers")
 
-        followersRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(p0: DataSnapshot)
-            {
-                if(p0.exists())
-                {
+        followersRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
                     view?.total_followers?.text = p0.childrenCount.toString()
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -250,18 +307,14 @@ class ProfileFragment : Fragment() {
             .child("Follow").child(profileId)
             .child("Following")
 
-        followersRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(p0: DataSnapshot)
-            {
-                if(p0.exists())
-                {
+        followersRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
                     view?.total_following?.text = p0.childrenCount.toString()
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -272,19 +325,14 @@ class ProfileFragment : Fragment() {
     {
         val postsRef = FirebaseDatabase.getInstance().reference.child("Posts")
 
-        postsRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(p0: DataSnapshot)
-            {
-                if(p0.exists())
-                {
+        postsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
                     (postList as ArrayList<Post>).clear()
 
-                    for (snapshot in p0.children)
-                    {
+                    for (snapshot in p0.children) {
                         val post = snapshot.getValue(Post::class.java)!!
-                        if (post.getPublisher().equals(profileId))
-                        {
+                        if (post.getPublisher().equals(profileId)) {
                             (postList as ArrayList<Post>).add(post)
                         }
                         Collections.reverse(postList)
@@ -294,8 +342,7 @@ class ProfileFragment : Fragment() {
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -305,25 +352,23 @@ class ProfileFragment : Fragment() {
     {
         val usersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(profileId)
 
-        usersRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(p0: DataSnapshot)
-            {
-                if(p0.exists())
-                {
+        usersRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
                     val user = p0.getValue<User>(User::class.java)
-                    if(user!!.getImage().isEmpty()){
-                        view?.pro_image_profile_frag!!.setImageResource(R.drawable.profile)}
-                    else{
-                    Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile).into(view?.pro_image_profile_frag)}
+                    if (user!!.getImage().isEmpty()) {
+                        view?.pro_image_profile_frag!!.setImageResource(R.drawable.profile)
+                    } else {
+                        Picasso.get().load(user!!.getImage()).placeholder(R.drawable.profile)
+                            .into(view?.pro_image_profile_frag)
+                    }
                     view?.profile_fragment_username?.text = user!!.getUsername()
                     view?.full_name_profile_frag?.text = user!!.getFullname()
                     view?.bio_profile_frag?.text = user!!.getBio()
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -358,20 +403,15 @@ class ProfileFragment : Fragment() {
     {
         val postsRef = FirebaseDatabase.getInstance().reference.child("Posts")
 
-        postsRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(dataSnapshot: DataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
+        postsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
                     var postCounter = 0
 
-                    for (snapShot in dataSnapshot.children)
-                    {
+                    for (snapShot in dataSnapshot.children) {
                         val post = snapShot.getValue(Post::class.java)!!
 
-                        if (post.getPublisher() == profileId)
-                        {
+                        if (post.getPublisher() == profileId) {
                             postCounter++
                         }
                     }
@@ -379,8 +419,7 @@ class ProfileFragment : Fragment() {
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -396,22 +435,17 @@ class ProfileFragment : Fragment() {
             .child("Saves").child(firebaseUser.uid)
 
 
-        savedRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(dataSnapshot: DataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
-                    for (snapshot in dataSnapshot.children)
-                    {
+        savedRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (snapshot in dataSnapshot.children) {
                         (mySavesImg as ArrayList<String>).add(snapshot.key!!)
                     }
                     readSavedImagesData()
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })
@@ -421,22 +455,16 @@ class ProfileFragment : Fragment() {
     {
         val postsRef = FirebaseDatabase.getInstance().reference.child("Posts")
 
-        postsRef.addValueEventListener(object : ValueEventListener
-        {
-            override fun onDataChange(dataSnapshot: DataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
+        postsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
                     (postListSaved as ArrayList<Post>).clear()
 
-                    for (snapshot in dataSnapshot.children)
-                    {
+                    for (snapshot in dataSnapshot.children) {
                         val post = snapshot.getValue(Post::class.java)
 
-                        for (key in mySavesImg!!)
-                        {
-                            if (post!!.getPostid() == key)
-                            {
+                        for (key in mySavesImg!!) {
+                            if (post!!.getPostid() == key) {
                                 (postListSaved as ArrayList<Post>).add(post!!)
                             }
                         }
@@ -446,8 +474,7 @@ class ProfileFragment : Fragment() {
                 }
             }
 
-            override fun onCancelled(p0: DatabaseError)
-            {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
         })

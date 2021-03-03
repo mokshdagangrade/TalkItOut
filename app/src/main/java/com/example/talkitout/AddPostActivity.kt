@@ -74,6 +74,10 @@ class AddPostActivity : AppCompatActivity()
         image_add = findViewById(R.id.image_add)
         image_add_text = findViewById(R.id.image_add_text)
 
+        close_add_post_btn.setOnClickListener {
+            onBackPressed()
+        }
+
         image_add!!.setOnClickListener{
             CropImage.activity().setGuidelines(CropImageView.Guidelines.ON)
                     .setAspectRatio(2, 1)

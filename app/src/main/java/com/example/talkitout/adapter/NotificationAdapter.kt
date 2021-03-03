@@ -164,8 +164,9 @@ class NotificationAdapter(
                 if(p0.exists())
                 {
                     val post = p0.getValue<Post>(Post::class.java)
+                    if(post!!.getPostimage()!=""){
 
-                    Picasso.get().load(post!!.getPostimage()).placeholder(R.drawable.profile).into(imageView)
+                    Picasso.get().load(post!!.getPostimage()).placeholder(R.drawable.profile).into(imageView)}
                 }
             }
 

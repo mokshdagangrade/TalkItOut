@@ -213,8 +213,13 @@ class PostAdapter
             {
                 if (p0.exists())
                 {
-                    likes.text = p0.childrenCount.toString() + " likes"
-
+                    likes.visibility = View.VISIBLE
+                    if(p0.childrenCount.toInt()==1){
+                        likes.text = p0.childrenCount.toString() + " like"
+                    }
+                    else{
+                        likes.text = p0.childrenCount.toString() + " likes"
+                    }
                 }
 
             }
@@ -239,7 +244,13 @@ class PostAdapter
             {
                 if (p0.exists())
                 {
-                    comments.text = "view all " + p0.childrenCount.toString() + " comments"
+                    comments.visibility = View.VISIBLE
+                    if(p0.childrenCount.toInt()==1){
+                        comments.text = "view " + p0.childrenCount.toString() + " comment"
+                    }
+                    else {
+                        comments.text = "view all " + p0.childrenCount.toString() + " comments"
+                    }
 
                 }
 

@@ -100,10 +100,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/full_name_profile_frag"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
-        android:inputType="text"
-        android:hint="UsernName">
+        android:layout_marginRight="20dp"
+        android:hint="Username"
+        android:inputType="text">
 
     </EditText>
 
@@ -113,10 +113,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username_profile_frag"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
-        android:inputType="text"
-        android:hint="Enter Bio">
+        android:layout_marginRight="20dp"
+        android:hint="Bio"
+        android:inputType="text">
 
     </EditText>
 

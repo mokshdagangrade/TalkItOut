@@ -50,6 +50,10 @@ class AccountSettingsActivity : AppCompatActivity()
             finish()
         }
 
+        close_profile_btn.setOnClickListener {
+            onBackPressed()
+        }
+
         change_image_text_btn.setOnClickListener {
             checker = "clicked"
 
