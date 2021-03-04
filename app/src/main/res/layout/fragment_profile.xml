@@ -58,6 +58,12 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_bar"
+        android:layout_below="@+id/app_bar_layout_profile_frag">
+
     <RelativeLayout
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
@@ -144,8 +150,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:text="Full Name"
-                        android:textColor="@android:color/black"
-                        android:textSize="13dp"
+                        android:textColor="@color/darkBlue"
+                        android:textSize="18sp"
                         android:textStyle="bold">
 
 
@@ -158,8 +164,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:text="Bio"
-                        android:textColor="@android:color/black"
-                        android:textSize="13dp">
+                        android:textColor="#007499"
+                        android:textSize="16dp">
 
                     </TextView>
                 </LinearLayout>
@@ -168,10 +174,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginRight="7dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -187,8 +193,8 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="0"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp"
+                            android:textColor="@color/darkBlue"
+                            android:textSize="18sp"
                             android:textStyle="bold">
 
 
@@ -200,8 +206,8 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Posts"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp">
+                            android:textColor="#007499"
+                            android:textSize="16sp">
 
                         </TextView>
 
@@ -222,8 +228,8 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="0"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp"
+                            android:textColor="@color/darkBlue"
+                            android:textSize="18sp"
                             android:textStyle="bold">
 
 
@@ -235,8 +241,8 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="Followers"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp">
+                            android:textColor="#007499"
+                            android:textSize="16dp">
 
                         </TextView>
 
@@ -252,13 +258,13 @@
 
                         <TextView
                             android:id="@+id/total_following"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="0"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp"
+                            android:textColor="@color/darkBlue"
+                            android:textSize="18sp"
                             android:textStyle="bold">
 
 
@@ -268,9 +274,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:gravity="center"
                             android:text="Following"
-                            android:textColor="@android:color/black"
-                            android:textSize="12dp">
+                            android:textColor="#007499"
+                            android:textSize="16dp">
 
                         </TextView>
 
@@ -284,11 +291,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/button_black_background"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/images_grid_view_btn"
@@ -296,18 +302,20 @@
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/grid">
+                    android:src="@drawable/grid"
+                    android:tint="@color/darkBlue">
 
                 </ImageButton>
 
                 <ImageButton
                     android:id="@+id/images_save_btn"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="1dp"
                     android:layout_height="49dp"
+                    android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:src="@drawable/save_large_icon"
-                    android:layout_weight="1"
-                    style="?android:attr/buttonBarButtonStyle">
+                    android:tint="@color/darkBlue">
 
                 </ImageButton>
 
@@ -331,5 +339,6 @@
         </LinearLayout>
 
     </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -13,30 +13,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StoryTimeActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".AccountSettingsActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".AddPostActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".AddStoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CommentsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ShowUsersActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SignUpActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".StoryActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".SignInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".StoryTimeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AccountSettingsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddPostActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddStoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowUsersActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".StoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

@@ -21,18 +21,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf4dd545-aef2-425f-ac48-fbe9b8c41a5d" name="Default Changelist" comment="profile layout changed and only desc allowed">
+    <list default="true" id="bf4dd545-aef2-425f-ac48-fbe9b8c41a5d" name="Default Changelist" comment="bugs sorted">
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AccountSettingsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AccountSettingsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddPostActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/AddPostActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/NotificationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/NotificationAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/PostAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/adapter/PostAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/talkitout/fragments/ProfileFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_account_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_account_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_post.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_post.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/posts_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/posts_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -126,7 +126,11 @@
     <key name="android.template.694663700">
       <recent name="com.example.talkitout" />
     </key>
+    <key name="android.template.414533415">
+      <recent name="com.example.talkitout" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android Studio\TalkItOut\app\src\main\res\drawable" />
       <recent name="D:\Android Studio\TalkItOut\app\src\main\res\drawable-v24" />
       <recent name="D:\Android Studio\TalkItOut\app" />
       <recent name="D:\Android Studio\TalkItOut\app\src\main\res\menu" />
@@ -286,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614759691562</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="bugs sorted">
+      <created>1614776389280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614776389522</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,25 +319,30 @@
     <MESSAGE value="Category added, login issue sorted" />
     <MESSAGE value="Posts layout changed, story figured." />
     <MESSAGE value="profile layout changed and only desc allowed" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile layout changed and only desc allowed" />
+    <MESSAGE value="bugs sorted" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs sorted" />
   </component>
   <component name="WindowStateProjectService">
     <state x="346" y="158" key="AndroidCreateResourceDirectoryDialog" timestamp="1613768494693">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="346" y="158" key="AndroidCreateResourceDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1613768494693" />
-    <state x="346" y="158" key="AndroidCreateResourceFileDialog" timestamp="1614769350117">
+    <state x="346" y="158" key="AndroidCreateResourceFileDialog" timestamp="1614869765013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="346" y="158" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1614769350117" />
+    <state x="346" y="158" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1614869765013" />
+    <state x="585" y="155" key="AndroidCreateXmlResourceDialog" timestamp="1614872112265">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="585" y="155" key="AndroidCreateXmlResourceDialog/0.0.1536.824@0.0.1536.824" timestamp="1614872112265" />
     <state x="515" y="138" key="AndroidProcessChooserDialog" timestamp="1614771636291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="138" key="AndroidProcessChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1614771636291" />
-    <state x="496" y="91" key="FileChooserDialogImpl" timestamp="1613890059183">
+    <state x="496" y="91" key="FileChooserDialogImpl" timestamp="1614872997060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="496" y="91" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1613890059183" />
+    <state x="496" y="91" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614872997060" />
     <state x="602" y="306" key="Github.Dialog.Accounts.Choose" timestamp="1614373131730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -359,10 +375,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="153" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614159081836" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1614759787892">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1614776441024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614759787892" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614776441024" />
+    <state x="542" y="175" key="chooseDestDirectoryDialog" timestamp="1614872916436">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="542" y="175" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1614872916436" />
     <state x="536" y="82" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1613890222301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

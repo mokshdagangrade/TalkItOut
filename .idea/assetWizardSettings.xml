@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_more" />
-                            <entry key="sourceFile" value="D:\Android Studio\TalkItOut" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_tick" />
+                            <entry key="sourceFile" value="C:\Users\Yogesh\Downloads\tick.svg" />
                           </map>
                         </option>
                       </PersistentState>
